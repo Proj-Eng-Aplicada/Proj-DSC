@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Formulário com css bootstrap</title>
+
+            <link rel="stylesheet" href="css/bootstrap.css">
+            <link rel="stylesheet" href="css/bootstrap-responsive.css">
+            <link rel="stylesheet" href="css/app.css">
+            
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            <script src="js/jquery.easing.1.3.js"></script>
+            <script src="js/bootstrap.js"></script>
+            <script src="js/calendario.js"></script>
+
+            <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
+    </head>
+    
+    <body>
+        
+        <div id="content" class="container_12" role="main">
+            <div class="centralized" id="interna">
+                <h4>Cadastro de Usuarios/Servidor</h4>
+                
+                <hr>
+                <form class='form-horizontal' action="" name="form1">
+                    <table>
+                        <th colspan="2" style="text-align:left">Dados do Servidor</th>
+                        <tr>
+                            <th>
+                                <label for="id_username">Nome :</label>
+                            </th>
+                                <td>
+                                    <input name="username" maxlength="30" autofocus="" type="text" id="id_username" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>
+                                    <label for="id_password">Data Nasc :</label>
+                                </th>
+                                    <td>
+                                        <input name="data" value="" maxlength="30" autofocus="" type="text"/> 
+                                    </td>
+                                    <td>
+                                        <input type="button" name="btnData" value="..." Onclick="javascript:popdate('document.form1.data','pop1','100',document.form1.data.value)" />
+                                    </td>
+                                    <td>
+                                        <span id="pop1" style="position:absolute"></span>
+                                    </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_cpf">CPF :</label>
+                                </th>
+                                <td>
+                                    <input name="cpf" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_rg">RG :</label>
+                                </th>
+                                <td>
+                                    <input name="rg" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_matricula">Matricula :</label>
+                                </th>
+                                <td>
+                                    <input name="matricula" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+                        
+                        <th colspan="2" style="text-align:left"><hr>Endereço</th>
+                     
+                        <tr>
+                            <th>
+                                <label for="id_rua">Rua :</label>
+                            </th>
+                            <td>
+                                <input name="rua" maxlength="30" autofocus="" type="text" />
+                            </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>
+                                    <label for="id_numero">Numero :</label>
+                                </th>
+                                <td>
+                                    <input name="numero" maxlength="30" autofocus="" type="text" />
+                                </td>
+                                  
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_cidade">Cidade :</label>
+                                </th>
+                                <td>
+                                    <input name="cidade" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_estado">Estado :</label>
+                                </th>
+                                <td>
+                                    <input name="estado" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_cep">CEP :</label>
+                                </th>
+                                <td>
+                                    <input name="cep" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+                         <th colspan="2" style="text-align:left"><hr>Usuario</th>
+                         <tr>
+                            <th>
+                                <label for="id_login">Login</label>
+                            </th>
+                            <td>
+                                <input name="login" value="" maxlength="30" autofocus="" type="text"/>
+                            </td>
+                         </tr>
+
+                         <tr>
+                            <th>
+                                <label for="id_senha">Senha :</label>
+                            </th>
+                            <td>
+                                <input name="senha" value="" type="password" autofocus="" >
+                            </td>
+                         </tr>
+
+                         <tr>
+                            <th>
+                                <label for="id_email">Email :</label>
+                            </th>
+                            <td>
+                                <input name="email" value="" type="text" autofocus="" >
+                            </td>
+                         </tr>
+                         
+                    </table>
+
+                    <input class='btn btn-mini btn-primary' id="login" type="submit" value="Cadastrar" />
+                </form>
+            
+            </dvi>
+        </div>
+</body>
+</html>
+
+
