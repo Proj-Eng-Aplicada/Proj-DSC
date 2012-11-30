@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="img/aluno.ico" rel="shortcut icon">
+    <title>
+Manter Professores - SigEduca
+</title>
+
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link href="css/estilo.css" rel="stylesheet">
+    <script src="js/calendario.js"></script>
+
+    
+    <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">           
+                <a class="brand" href="#">SigEduca - Manter Professores</a>
+                
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i>
+                        Usuario Logado <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sair do Sistema</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<div class="conteiner-fluid">
+    <div class="span3">
+            <div class="well">
+                <ul class="nav nav-list">
+                  <li class="nav-header">Professores</li>
+                  <li  class="active"><a href="manterprofessores.html"><i class="icon-book"></i>Manter Professores</a></li>
+                  <li><a href="#"><i class="icon-book"></i>Listar Professores/Turmas</a></li>
+                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Turmas</a></li>
+                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Professores</a></li>
+                  <li class="nav-header">Turmas</li>
+                  <li><a href="#">Manter Turmas</a></li>
+                  <li><a href="#">Configurações</a></li>
+                  <li class="nav-header">Alunos</li>
+                  <li><a href="#">Manter Alunos</a></li>
+                  <li class="nav-header">Administrativo</li>
+                  <li><a href="#">Cadastro de Usuarios</a></li>
+                </ul>
+            </div>
+        </div>
+
+    <div class="span9">
+       <div id="content1"class="hero-unit">
+       <form class='form-horizontal' action="" name="form1">
+                    <table>
+                        <th colspan="2" style="text-align:left">Dados do Servidor</th>
+                        <tr>
+                            <th>
+                                <label for="id_username">Nome :</label>
+                            </th>
+                                <td>
+                                    <input name="username" maxlength="30" autofocus="" type="text" id="id_username" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>
+                                    <label for="id_datanasc">Data Nasc :</label>
+                                </th>
+                                    <td>
+                                        <input name="data" value="" maxlength="30" autofocus="" type="text"/> 
+                                    </td>
+                                    <td>
+                                        <input type="button" name="btnData" value="..." Onclick="javascript:popdate('document.form1.data','pop1','100',document.form1.data.value)" />
+                                    </td>
+                                    <td>
+                                        <span id="pop1" style="position:absolute"></span>
+                                    </td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_disc">Disciplina :</label>
+                                </th>
+                                <td>
+                                    <input name="disc" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+
+                            <tr>
+                                <th>
+                                    <label for="id_matricula">Matricula :</label>
+                                </th>
+                                <td>
+                                    <input name="matricula" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+                    </table>
+
+                    <input class='btn btn-mini btn-primary' id="login" type="submit" value="Cadastrar" />
+                </form>
+
+                <form class='form-horizontal' action="" name="form2">    
+                    <table class="table table-striped">
+                    <tr>
+                        <th colspan="5" style="text-align:center">
+                            <th>
+                                <label for="id_username">Nome :</label>
+                            </th>
+                            <th>
+                                <label for="id_datanasc">Data Nascimento :</label>
+                            </th> 
+                            <th>
+                                <label for="id_disciplina">Disciplina :</label>
+                            </th> 
+                            <th>
+                                <label for="id_matricula">Matricula :</label>
+                            </th> 
+                        </th>
+                    </tr>
+                    </table>
+                </form>
+       </div>
+    </div> 
+</div>
+</body>    
+</html>
