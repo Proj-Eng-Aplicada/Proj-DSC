@@ -6,6 +6,7 @@ function cadastrarTurma(){
 	var dados ='<tr><td></td><td><label for="id_username">'+nome+'</label></td><td><label for="id_disciplina">'+disciplina+'</label></td><td><a title="Editar" href="#"><img  class="icon-edit"></a><a href="#" title="Remover"><img  class="icon-remove"></a></td></tr>';
 
 	document.getElementById("table_turmas").innerHTML += dados;
+	
 	document.form1.usarname.value = "";
 	document.form1.disc.value = "";   
 }
