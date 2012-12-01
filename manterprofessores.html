@@ -20,7 +20,7 @@ Manter Professores - SigEduca
     <script src="js/bootstrap.js"></script>
     <link href="css/estilo.css" rel="stylesheet">
     <script src="js/calendario.js"></script>
-    
+    <script src="js/diretor.js"></script>
 
     
     <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
@@ -88,7 +88,7 @@ Manter Professores - SigEduca
                                         <input name="data" value="" maxlength="30" autofocus="" type="text"/> 
                                     </td>
                                     <td>
-                                        <input type="button" name="btnData" value="..." Onclick="javascript:popdate('document.form1.data','pop1','100',document.form1.data.value)" />
+                                        <input type="button" name="btnData" value="..." Onclick="javascript:popdate('document.form1.data','pop1','10',document.form1.data.value)" />
                                     </td>
                                     <td>
                                         <span id="pop1" style="position:absolute"></span>
@@ -114,29 +114,58 @@ Manter Professores - SigEduca
                             </tr>
                     </table>
 
-                    <input class='btn btn-mini btn-primary' id="login" type="submit" value="Cadastrar" />
+                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarProfessor()" />
                 </form>
 
-                <form class='form-horizontal' action="" name="form2">    
-                    <table class="table table-striped">
-                    <tr>
-                        <th colspan="5" style="text-align:center">
-                            <th>
-                                <label for="id_username">Nome :</label>
-                            </th>
-                            <th>
-                                <label for="id_datanasc">Data Nascimento :</label>
-                            </th> 
-                            <th>
-                                <label for="id_disciplina">Disciplina :</label>
-                            </th> 
-                            <th>
-                                <label for="id_matricula">Matricula :</label>
-                            </th> 
+                <form class='form-inline' action="" name="form2">    
+                    <table class="table-striped" id="table_prof">
+                        <tbody nth-child>
+                        <th>
+                            <td>Nome :</td><td>Disciplina :</td><td>Matricula :</td><td>Data Nasc. :</td><td>Alterar/Exluir</td>
                         </th>
-                    </tr>
+                        <tr>
+                            <td></td>  
+                            <td>
+                                <label for="id_username">Chico Cesar</label>
+                            </td>
+                            <td>
+                                <label for="id_disciplina">Algebra Linear</label>
+                            </td> 
+
+                            <td>
+                                <label for="id_mat">00001</label>
+                            </td> 
+
+                            <td>
+                                <label for="id_disciplina">01/01/1980</label>
+                            </td> 
+                            <td>
+                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                            <td></td>  
+                            <td>
+                                <label for="id_username">Truma 2 MatElem</label>
+                            </td>
+                            <td>
+                                <label for="id_disciplina">Matemática Elementar</label>
+                            </td> 
+                            <td>
+                                <label for="id_mat">00020</label>
+                            </td> 
+
+                            <td>
+                                <label for="id_data">01/01/1987</label>
+                            </td> 
+                            <td>
+                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                            </td> 
+                        </tr>
+                    </tbody>
                     </table>
-                </form>
+        </form>
        </div>
     </div> 
 </div>
