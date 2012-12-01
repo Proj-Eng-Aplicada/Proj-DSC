@@ -21,3 +21,32 @@ border-left-color: #EEE;
 -webkit-box-shadow: 0px 1px 3px #858585;
 box-shadow: 0px 1px 3px #858585;
 }
+
+.table {
+width: 100%;
+margin-bottom: 20px;
+}
+manterTurmas.htmlmedia="all"
+form table {
+margin-bottom: 0px;
+}
+manterTurmas.htmlmedia="all"
+table {
+display: inline-block;
+}
+table {
+max-width: 100%;
+background-color: transparent;
+border-collapse: collapse;
+border-spacing: 0;
+}
+table[Attributes Style] {
+-webkit-margin-start: auto;
+-webkit-margin-end: auto;
+}
+user agent stylesheettable {
+display: table;
+border-collapse: separate;
+border-spacing: 2px;
+border-color: gray;
+}

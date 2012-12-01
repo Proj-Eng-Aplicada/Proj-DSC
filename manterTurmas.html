@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link href="img/aluno.ico" rel="shortcut icon">
     <title>
-Aluno - SigEduca
+Manter Turmas - SigEduca
 </title>
 
     <!--[if lt IE 9]>
@@ -18,12 +18,120 @@ Aluno - SigEduca
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap.js"></script>
-
+    <link href="css/estilo.css" rel="stylesheet">
+    <script src="js/calendario.js"></script>
+    
 
     
     <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
 
 </head>
 <body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">           
+                <a class="brand" href="#">SigEduca - Manter Turmas</a>
+                
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i>
+                        Usuario Logado <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sair do Sistema</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<div class="conteiner-fluid">
+    <div class="span3">
+            <div class="well">
+                <ul class="nav nav-list">
+                  <li class="nav-header">Professores</li>
+                  <li  class="active"><a href="manterprofessores.html"><i class="icon-book"></i>Manter Professores</a></li>
+                  <li><a href="#"><i class="icon-book"></i>Listar Professores/Turmas</a></li>
+                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Turmas</a></li>
+                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Professores</a></li>
+                  <li class="nav-header">Turmas</li>
+                  <li><a href="#">Manter Turmas</a></li>
+                  <li><a href="#">Configurações</a></li>
+                  <li class="nav-header">Alunos</li>
+                  <li><a href="#">Manter Alunos</a></li>
+                  <li class="nav-header">Administrativo</li>
+                  <li><a href="#">Cadastro de Usuarios</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="span9">
+       <div id="content1"class="hero-unit">
+       <form class='form-horizontal' action="" name="form1">
+                    <table>
+                        <th colspan="2" style="text-align:left">Dados da Turma</th>
+                        <tr>
+                            <th>
+                                <label for="id_username" colspan="2">Nome :</label>
+                            </th>
+                                <td>
+                                    <input name="username" maxlength="30" autofocus="" type="text" id="id_username" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>
+                                    <label for="id_disciplina">Disciplina :</label>
+                                </th>
+                                    <td>
+                                        <input name="disc" value="" maxlength="30" autofocus="" type="text"/> 
+                                    </td>
+                            </tr>
+                    </table>
+
+                    <input class='btn btn-mini btn-primary' id="login" type="submit" value="Cadastrar" />
+        </form>
+
+        <form class='form-inline' action="" name="form2">    
+                    <table class="table-striped">
+                        <tbody nth-child>
+                        <th>
+                            <td>Nome :</td><td>Disciplina :</td><td>Alterar/Exluir</td>
+                        </th>
+                        <tr>
+                            <td></td>  
+                            <td>
+                                <label for="id_username">Truma 1 Alg</label>
+                            </td>
+                            <td>
+                                <label for="id_disciplina">Algebra Linear</label>
+                            </td> 
+                            <td>
+                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                            <td></td>  
+                            <td>
+                                <label for="id_username">Truma 2 MatElem</label>
+                            </td>
+                            <td>
+                                <label for="id_disciplina">Matemática Elementar</label>
+                            </td> 
+                            <td>
+                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                            </td> 
+                        </tr>
+                    </tbody>
+                    </table>
+        </form>
+       
+
+
+       </div>
+    </div> 
+</div>
 </body>    
 </html>

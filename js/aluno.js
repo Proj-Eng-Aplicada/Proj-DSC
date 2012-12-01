@@ -13,6 +13,4 @@ function cadastrar(){
 	document.formulario.nome.value = "";
 	document.formulario.matricula.value="";   
 
-
-
 }
