@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link href="img/aluno.ico" rel="shortcut icon">
+    <title>
+Professor - SigEduca
+</title>
+
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+
+    
+    <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">           
+                <a class="brand" href="painelDiretor.html">SigEduca - Painel de Alocação de Turmas</a>
+                
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i>
+                        Usuario Logado <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sair do Sistema</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+       <div id="content1"class="hero-unit">
+       <form class='form-horizontal' action="" name="form1">
+         <table>
+                          <th colspan="2" style="text-align:center"><p>Alocação de Disciplinas</p>
+                          <p>&nbsp;</p></th>
+                        <tr>
+                            <th>
+                                <label for="id_username">Professor:</label>
+                            </th>
+                                <td>
+                                  <select name="professor"  id="id_username" >
+                               	    <option value="Rodrigo Vilar" >Rodrigo Vilar </option>
+								    <option value="Surama Maciel" >Surama Maciel</option>
+								    <option value="Ayla Rebouças" >Ayla Rebouças</option>
+                                  </select>
+                                </td>
+                      </tr>
+                            
+                            <tr>
+                                <th>
+                                  <label for="disciplina">Disciplina :</label>
+                                </th>
+                                    <td>
+                                        <select name="disciplina" >
+                                    	  <option value="POO" >POO </option>
+  										  <option value="Álgebra Linear" >Álgebra Linear</option>
+ 										  <option value="Cálculo" >Cálculo</option>                                        	
+                                        </select> 
+                                    </td>
+                            </tr>                  
+                    </table>
+
+                    <p>
+                      <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarUsuario()" />
+                    </p>
+                    <p>&nbsp;</p>
+       </form>
+
+                <form class='form-inline' action="" name="form2">    
+                    <p>&nbsp;</p>
+                    <table class="table-striped" id="table_prof">
+                        <tbody nth-child id="body_prof">
+                      <th>
+                        <td>Professor :</td><td>Disciplina :</td><td>Alterar/Exluir</td>
+                        </th>
+                        <tr>
+                            <td></td>  
+                            <td>              
+                               <label>Chico Cesar</label>
+                               <input type="hidden" value="Chico Cesar" id="nome1" /> 
+                            </td>
+                            <td>
+                                <label>01/01/2012</label>
+                                <input type="hidden" value="01/01/2012" id="data1" /> 
+                            </td> 
+
+           
+                            <td>
+                                <a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                            <td></td>  
+                            <td>              
+                               <label>Caetano Veloso</label>
+                               <input type="hidden" value="Caetano Veloso" id="nome2" /> 
+                            </td>
+                            <td>
+                                <label>02/02/2012</label>
+                                <input type="hidden" value="02/02/2012" id="data2" /> 
+                            </td>
+
+                            <td>
+                                <a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
+                            </td> 
+                        </tr>
+                    </tbody>
+                  </table>
+        </form>
+       </div>
+</div>
+</body>    
+</html>
