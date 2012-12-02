@@ -52,19 +52,16 @@ Manter Professores - SigEduca
                 <ul class="nav nav-list">
                   <li class="nav-header">Professores</li>
                   <li  class="active"><a href="manterprofessores.html"><i class="icon-book"></i>Manter Professores</a></li>
-                  <li><a href="#"><i class="icon-book"></i>Listar Professores/Turmas</a></li>
-                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Turmas</a></li>
-                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Professores</a></li>
                   <li class="nav-header">Turmas</li>
-                  <li><a href="#">Manter Turmas</a></li>
+                  <li><a href="manterTurmas.html">Manter Turmas</a></li>
                   <li><a href="#">Configurações</a></li>
                   <li class="nav-header">Alunos</li>
-                  <li><a href="#">Manter Alunos</a></li>
+                  <li><a href="manterAluno.html">Manter Alunos</a></li>
                   <li class="nav-header">Administrativo</li>
-                  <li><a href="#">Cadastro de Usuarios</a></li>
+                  <li><a href="cadastroUsuario.html">Cadastro de Usuarios</a></li>
                 </ul>
             </div>
-        </div>
+    </div>
 
     <div class="span9">
        <div id="content1"class="hero-unit">
@@ -119,48 +116,62 @@ Manter Professores - SigEduca
 
                 <form class='form-inline' action="" name="form2">    
                     <table class="table-striped" id="table_prof">
-                        <tbody nth-child>
+                        <tbody nth-child id="body_prof">
                         <th>
                             <td>Nome :</td><td>Disciplina :</td><td>Matricula :</td><td>Data Nasc. :</td><td>Alterar/Exluir</td>
                         </th>
                         <tr>
                             <td></td>  
-                            <td>
-                                <label for="id_username">Chico Cesar</label>
+                            <td>              
+                               <label>Chico Cesar</label>
+                               <input type="hidden" value="Chico Cesar" id="nome1" /> 
                             </td>
                             <td>
-                                <label for="id_disciplina">Algebra Linear</label>
+                                <label>Algebra Linear</label>
+                                <input type="hidden" value="Algebra Linear" id="disciplina1" /> 
                             </td> 
 
                             <td>
-                                <label for="id_mat">00001</label>
+                                <label>00001</label>
+                                <input type="hidden" value="00001" id="matricula1" /> 
                             </td> 
 
                             <td>
-                                <label for="id_disciplina">01/01/1980</label>
+                                <label>01/01/1980</label>
+                                <input type="hidden" value="01/01/1980" id="data1" /> 
                             </td> 
                             <td>
-                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                                <a title="Editar" onClick="editarProfessor(1)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerProfessor(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
                             </td> 
                         </tr>
 
                         <tr>
                             <td></td>  
                             <td>
-                                <label for="id_username">Truma 2 MatElem</label>
+                                <label>Heman</label>
+                                <input type="hidden" value="heman" id="nome2" /> 
                             </td>
                             <td>
-                                <label for="id_disciplina">Matemática Elementar</label>
+                                <label>Matemática Elementar</label>
+                                <input type="hidden" value="Chico Cesar" id="disciplina2" /> 
                             </td> 
                             <td>
-                                <label for="id_mat">00020</label>
+                                <label>00020</label>
+                                <input type="hidden" value="00020" id="matricula2" /> 
                             </td> 
 
                             <td>
-                                <label for="id_data">01/01/1987</label>
+                                <label>01/01/1987</label>
+                                <input type="hidden" value="01/01/1987" id="data2" /> 
                             </td> 
                             <td>
-                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                                <a title="Editar" onClick="editarProfessor(2)"> <img  class="icon-edit"></a> 
+                                <a title="Remover" onClick="removerProfessor(this.parentNode.parentNode.rowIndex)">  <img  class="icon-remove"></a>
+
                             </td> 
                         </tr>
                     </tbody>

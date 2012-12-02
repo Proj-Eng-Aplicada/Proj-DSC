@@ -30,7 +30,7 @@ Manter Turmas - SigEduca
     <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container-fluid">           
-                <a class="brand" href="#">SigEduca - Manter Turmas</a>
+                <a class="brand" href="painelDiretor.html">SigEduca - Painel Administrativo</a>
                 
                 <div class="btn-group pull-right">
                     <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
@@ -52,16 +52,13 @@ Manter Turmas - SigEduca
                 <ul class="nav nav-list">
                   <li class="nav-header">Professores</li>
                   <li  class="active"><a href="manterprofessores.html"><i class="icon-book"></i>Manter Professores</a></li>
-                  <li><a href="#"><i class="icon-book"></i>Listar Professores/Turmas</a></li>
-                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Turmas</a></li>
-                  <li><a href="#"><i class="icon-user"></i>Listar Alunos/Professores</a></li>
                   <li class="nav-header">Turmas</li>
                   <li><a href="#">Manter Turmas</a></li>
                   <li><a href="#">Configurações</a></li>
                   <li class="nav-header">Alunos</li>
-                  <li><a href="#">Manter Alunos</a></li>
+                  <li><a href="manterAluno.html">Manter Alunos</a></li>
                   <li class="nav-header">Administrativo</li>
-                  <li><a href="#">Cadastro de Usuarios</a></li>
+                  <li><a href="cadastroUsuario.html">Cadastro de Usuarios</a></li>
                 </ul>
             </div>
     </div>
@@ -76,7 +73,7 @@ Manter Turmas - SigEduca
                                 <label for="id_username" colspan="2">Nome :</label>
                             </th>
                                 <td>
-                                    <input name="username" maxlength="30" autofocus="" type="text" />
+                                    <input name="nome" maxlength="30" autofocus="" type="text" />
                                 </td>
                             </tr>
                             
@@ -90,38 +87,50 @@ Manter Turmas - SigEduca
                             </tr>
                     </table>
 
-                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarTurma()"/>
+                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarTurmas()"/>
         </form>
 
-        <form class='form-inline' action="" name="form2">    
-                    <table class="table-striped" id="table_turmas">
-                        <tbody nth-child>
+         <form class='form-inline' action="" name="form2">    
+                    <table class="table-striped" id="table_prof">
+                        <tbody nth-child id="body_prof">
                         <th>
                             <td>Nome :</td><td>Disciplina :</td><td>Alterar/Exluir</td>
                         </th>
                         <tr>
                             <td></td>  
-                            <td>
-                                <label for="id_username">Truma 1 Alg</label>
+                            <td>              
+                               <label>Turma 1 Algebra Linear</label>
+                               <input type="hidden" value="Turma 1 Algebra Linear" id="nome1" /> 
                             </td>
                             <td>
-                                <label for="id_disciplina">Algebra Linear</label>
+                                <label>Algebra Linear</label>
+                                <input type="hidden" value="Algebra Linear" id="disciplina1" /> 
                             </td> 
                             <td>
-                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                                <a title="Editar" onClick="editarTurmas(1)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerTurmas(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
                             </td> 
                         </tr>
 
                         <tr>
                             <td></td>  
                             <td>
-                                <label for="id_username">Truma 2 MatElem</label>
+                                <label>Turma 2 Ética</label>
+                                <input type="hidden" value="Turma 2 Ética" id="nome2" /> 
                             </td>
                             <td>
-                                <label for="id_disciplina">Matemática Elementar</label>
+                                <label>Ética</label>
+                                <input type="hidden" value="Ética" id="disciplina2" /> 
                             </td> 
                             <td>
-                                <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a>
+                                <a title="Editar" onClick="editarTurmas(2)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerTurmas(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
                             </td> 
                         </tr>
                     </tbody>

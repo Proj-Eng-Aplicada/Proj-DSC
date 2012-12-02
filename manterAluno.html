@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link href="img/aluno.ico" rel="shortcut icon">
     <title>
-Aluno - SigEduca
+Manter Aluno - SigEduca
 </title>
 
     <!--[if lt IE 9]>
@@ -18,12 +18,149 @@ Aluno - SigEduca
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap.js"></script>
+    <link href="css/estilo.css" rel="stylesheet">
+    <script src="js/calendario.js"></script>
+    <script src="js/diretor.js"></script>
 
-    
     
     <link rel="stylesheet" type="text/css" media="all" href="css/session_new.css" />
 
 </head>
 <body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">           
+                <a class="brand" href="painelDiretor.html">SigEduca - Painel Administrativo</a>
+                
+                <div class="btn-group pull-right">
+                    <a href="#" class="btn dropdown-toggle" data-toggle="dropdown">
+                        <i class="icon-user"></i>
+                        Usuario Logado <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sair do Sistema</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+<div class="conteiner-fluid">
+    <div class="span3">
+            <div class="well">
+                <ul class="nav nav-list">
+                  <li class="nav-header">Professores</li>
+                  <li  class="active"><a href="manterprofessores.html"><i class="icon-book"></i>Manter Professores</a></li>
+                  <li class="nav-header">Turmas</li>
+                  <li><a href="manterTurmas.html">Manter Turmas</a></li>
+                  <li><a href="#">Configurações</a></li>
+                  <li class="nav-header">Alunos</li>
+                  <li><a href="manterAluno.html">Manter Alunos</a></li>
+                  <li class="nav-header">Administrativo</li>
+                  <li><a href="cadastroUsuario.html">Cadastro de Usuarios</a></li>
+                </ul>
+            </div>
+    </div>
+
+    <div class="span9">
+       <div id="content1"class="hero-unit">
+       <form class='form-horizontal' action="" name="form1">
+                    <table>
+                        <th colspan="2" style="text-align:left">Dados do Aluno</th>
+                        <tr>
+                            <th>
+                                <label for="id_username">Nome :</label>
+                            </th>
+                                <td>
+                                    <input name="nome" maxlength="30" autofocus="" type="text" id="id_username" />
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <th>
+                                    <label for="id_datanasc">Data Nasc :</label>
+                                </th>
+                                    <td>
+                                        <input name="data" value="" maxlength="30" autofocus="" type="text"/> 
+                                    </td>
+                                    <td>
+                                        <input type="button" name="btnData" value="..." Onclick="javascript:popdate('document.form1.data','pop1','10',document.form1.data.value)" />
+                                    </td>
+                                    <td>
+                                        <span id="pop1" style="position:absolute"></span>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="id_matricula">Matricula :</label>
+                                </th>
+                                <td>
+                                    <input name="matricula" value="" maxlength="30" autofocus="" type="text"/> 
+                                <td>
+                            </tr>
+                    </table>
+
+                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarAluno()" />
+                </form>
+
+                <form class='form-inline' action="" name="form2">    
+                    <table class="table-striped" id="table_prof">
+                        <tbody nth-child id="body_prof">
+                        <th>
+                            <td>Nome :</td><td>Matricula :</td><td>Data Nasc. :</td><td>Alterar/Exluir</td>
+                        </th>
+                        <tr>
+                            <td></td>  
+                            <td>              
+                               <label>Chico Cesar</label>
+                               <input type="hidden" value="Chico Cesar" id="nome1" /> 
+                            </td>
+
+                            <td>
+                                <label>00001</label>
+                                <input type="hidden" value="00001" id="matricula1" /> 
+                            </td> 
+
+                            <td>
+                                <label>01/01/1980</label>
+                                <input type="hidden" value="01/01/1980" id="data1" /> 
+                            </td> 
+                            <td>
+                                <a title="Editar" onClick="editarAluno(1)"> <img  class="icon-edit" /></a> 
+                                
+                                <a title="Remover" onClick="removerAluno(this.parentNode.parentNode.rowIndex)">  
+                                        <img  class="icon-remove">
+                                </a>
+                            </td> 
+                        </tr>
+
+                        <tr>
+                            <td></td>  
+                            <td>
+                                <label>Heman</label>
+                                <input type="hidden" value="heman" id="nome2" /> 
+                            </td>
+                            <td>
+                                <label>00020</label>
+                                <input type="hidden" value="00020" id="matricula2" /> 
+                            </td> 
+
+                            <td>
+                                <label>01/01/1987</label>
+                                <input type="hidden" value="01/01/1987" id="data2" /> 
+                            </td> 
+                            <td>
+                                <a title="Editar" onClick="editarAluno(2)"> <img  class="icon-edit"></a> 
+                                <a title="Remover" onClick="removerAluno(this.parentNode.parentNode.rowIndex)">  <img  class="icon-remove"></a>
+
+                            </td> 
+                        </tr>
+                    </tbody>
+                    </table>
+        </form>
+       </div>
+    </div> 
+</div>
 </body>    
 </html>
