@@ -50,7 +50,19 @@ Aluno - SigEduca
             <fieldset>
                 <input type="text" name="nome" placeholder="Nome"/>
                 <input type="text" name="matricula" placeholder="Matrícula">
-                <input type="button" value="Adicionar" onClick="cadastrar()"></input>
+                <input class="botao_cadastro" type="button" value="Adicionar" onClick="cadastrar(this)"></input>
+                <p id="nome_vazio">Nome Vazio</p>
+                <p id="matricula_vazia">Matrícula Vazia</p>
+            </fieldset>
+        </form>
+    </div>
+    <div id="editar">
+        <form name="formeditar">
+            <fieldset>
+                <input type="text" name="nome" placeholder="Nome">
+                <input type="text" name="mat" placeholder="Matrícula">
+                <input type="button" value="Editar" onClick="editar1(1)"></input>
+
             </fieldset>
         </form>
     </div>
@@ -67,9 +79,14 @@ Aluno - SigEduca
     
         <tbody>
         <tr>  
-            <td>Bruno Nascimento</td>
-            <td>80811113</td>
-            <td> <a title="Editar" href="#"> <img  class="icon-edit"></a> <a href="#" title="Remover">  <img  class="icon-remove"></a> <a href="#"></td>
+            <td name="nome" id="nome1">Bruno Nascimento</td>
+            <td id="mat1">80811113</td>
+            <td> <a title="Editar" onclick="editar(this);" href="#"> <img  class="icon-edit"></a> <a href="#" onclick="remover(this);" title="Remover">  <img  class="icon-remove"></a></td>
+        </tr>
+        <tr>
+            <td name="nome" id="nome2">Kawe Ramon</td>
+            <td id="mat2">80911194</td>
+            <td> <a title="Editar" onclick="editar(this);" href="#"> <img  class="icon-edit"></a> <a href="#" onclick="remover(this);" title="Remover">  <img  class="icon-remove"></a></td>
         </tr>
       </tbody>
     </table>
