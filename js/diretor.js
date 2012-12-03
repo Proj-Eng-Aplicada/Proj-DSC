@@ -2,7 +2,6 @@ var codigo = 2;
 var codigoTurma = 2;
 var codigoAluno = 2;
 var codigoUsuario = 2;
-var codigoTurmaAlocar = 2;
 
 
 function crossedOut(item) {
@@ -57,8 +56,6 @@ function cadastrarTurmas(){
 	var dados ='<tr><td></td><td><label>'+nome+'</label><input type="hidden" value="'+nome+'" id="nome'+codigoTurma+'" /></td><td><label>'+disciplina+'</label><input type="hidden" value="'+disciplina+'" id="disciplina'+codigoTurma+'"></td><td>																																																<a title="Editar" href="#" onClick="editarTurmas('+codigoTurma+')"> <img  class="icon-edit"></a><a href="#" title="Remover"> <img  class="icon-remove" onClick="removerTurmas(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
 
 
-
-
 	document.getElementById("body_prof").innerHTML += dados;
 	
 	document.form1.nome.value = "";
@@ -81,14 +78,42 @@ function removerTurmas(codigoTurma){
 }
 
 
-function cadastrarAluno(){
-	codigoAluno++;
+function cadastrarAluno(node){
+	
 
 	var nome = document.form1.nome.value;
 	var matricula = document.form1.matricula.value;
 	var data = document.form1.data.value;
 
-	var dados ='<tr><td></td><td><label>'+nome+'</label><input type="hidden" value="'+nome+'" id="nome'+codigoAluno+'" /></td><td><label>'+matricula+'</label><input type="hidden" value="'+matricula+'" id="matricula'+codigoAluno+'" /></td><td><label>'+data+'</label><input type="hidden" value="'+data+'" id="data'+codigoAluno+'" /> </td><td><a title="Editar" onClick="editarAluno('+codigoAluno+')"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
+	if (nome == "") {
+		document.getElementById('nome_vazio').style.display='block';
+		setTimeout(function () { 
+			document.getElementById('nome_vazio').style.display='none';	
+		}, 2000);
+		return;
+	};
+	if (matricula == "") {
+		document.getElementById('matricula_vazia').style.display='block';
+		setTimeout(function () { 
+			document.getElementById('matricula_vazia').style.display='none';	
+		}, 2000);
+
+		return;
+	};
+	
+	codigoAluno++;
+	var dados ='<tr><td></td><td><label>'+nome+'</label><input type="hidden" value="'+nome+'" id="nome'+codigoAluno+'" /></td><td><label>'+matricula+'</label><input type="hidden" value="'+matricula+'" id="matricula'+codigoAluno+'" /></td><td><label>'+data+'</label><input type="hidden" value="'+data+'" id="data'+codigoAluno+'" /> </td><td><a title="Editar" onClick="editarAluno(this);"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this)"></a></td></tr>';
+
+	// var dados ='<tr><td></td><td><label>'
+	// +nome+'</label><input type="hidden" value="'
+	// +nome+'" id="nome'+codigoAluno+'" /></td><td><label>'
+	// +matricula+'</label><input type="hidden" value="'
+	// +matricula+'" id="matricula'+codigoAluno+'" /></td><td><label>'
+	// +data+'</label><input type="hidden" value="'+data+'" id="data'
+	// +codigoAluno+'" /> </td><td><a title="Editar" 
+	// onClick="editarAluno('+codigoAluno+')"> 
+	// <img  class="icon-edit" /></a> <a title="Remover">
+	// <img  class="icon-remove" onClick="removerAluno(this)"></a></td></tr>';
 
 	document.getElementById("body_prof").innerHTML += dados;
 	
@@ -98,23 +123,31 @@ function cadastrarAluno(){
 }
 
 
-function editarAluno(codigoAluno){
+function editarAluno(node){
 
-	var nome = document.getElementById("nome"+codigoAluno).value;
-	var matricula = document.getElementById("matricula"+codigoAluno).value;
-	var data = document.getElementById("data"+codigoAluno).value;
-	
+	var indexnode = node.parentNode.parentNode.rowIndex;
+	var nome = document.getElementById('nome'+indexnode).value;
+	var matricula = document.getElementById('matricula'+indexnode).value;
+	var data = document.getElementById('data'+indexnode).value;
+
 	document.form1.nome.value = nome;
 	document.form1.matricula.value = matricula;
 	document.form1.data.value = data;
 	removerTurmas(codigoAluno);
 }
 
-function removerAluno(codigoAluno){
-	document.getElementById("table_prof").deleteRow(codigoAluno);
+function removerAluno(node){
+	var indexnode = node.parentNode.parentNode.parentNode.rowIndex;
+	if (node.parentNode.parentNode.rowIndex == 1) {
+		indexnode = node.parentNode.parentNode.rowIndex;
+	};
+	if (node.parentNode.parentNode.rowIndex == 2) {
+		indexnode = node.parentNode.parentNode.rowIndex;
+	};
+	
+	
+	document.getElementById("table_prof").deleteRow(indexnode);
 }
-
-
 
 function cadastrarUsuario(){
 	codigoUsuario++;
@@ -142,32 +175,14 @@ function editarUsuario(codigoUsuario){
 	var email = document.getElementById("email"+codigoUsuario).value;
 	var data = document.getElementById("data"+codigoUsuario).value;
 	var login = document.getElementById("login"+codigoUsuario).value;
-	
 	document.form1.nome.value = nome;
 	document.form1.email.value = email;
 	document.form1.login.value = login;
 	document.form1.data.value = data;
+
 	removerUsuario(codigoUsuario);
 }
 
 function removerUsuario(codigoUsuario){
 	document.getElementById("table_prof").deleteRow(codigoUsuario);
-}
-
-function alocarTurma(){
-	codigoTurmaAlocar++;
-
-	var professor = document.alocacao_turma.professor.value;
-	var turma = document.alocacao_turma.turma.value;
-	var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+codigoTurmaAlocar+'" /> </td><td><label>'+turma+'</label><input type="hidden" value="'+turma+'" id="data+'codigoTurmaAlocar'+" /> </td> <td><a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  <img  class="icon-remove"></a></td> </tr>';
-	//var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+professor+'" /></td><td><label>'+disciplina+'</label><input type="hidden" value="'+disciplina+'" id="matricula'+disciplina+'" /></td><td><a title="Editar" onClick="editarAluno('+codigoAluno+')"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
-
-	document.getElementById("body_alocacao").innerHTML += dados;
-	
-	//document.alocacao_turma.professor.value = "";
-	//document.alocacao_turma.turma.value = "";
-}
-
-function removerAlocacao(codigoAlocacao){
-	document.getElementById("body_alocacao").deleteRow(codigoAlocacao);
 }

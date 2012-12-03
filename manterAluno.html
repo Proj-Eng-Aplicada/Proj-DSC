@@ -75,6 +75,9 @@ Manter Aluno - SigEduca
                                 <td>
                                     <input name="nome" maxlength="30" autofocus="" type="text" id="id_username" />
                                 </td>
+                                <td id="nome_vazio">
+                                    <p>Nome Vazio</p>
+                                </td>
                             </tr>
                             
                             <tr>
@@ -98,10 +101,12 @@ Manter Aluno - SigEduca
                                 <td>
                                     <input name="matricula" value="" maxlength="30" autofocus="" type="text"/> 
                                 <td>
+                                <td id="matricula_vazia">Matrícula Vazia</td>
                             </tr>
+                            
                     </table>
 
-                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarAluno()" />
+                    <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="cadastrarAluno(this)" />
                 </form>
 
                 <form class='form-inline' action="" name="form2">    
@@ -127,9 +132,9 @@ Manter Aluno - SigEduca
                                 <input type="hidden" value="01/01/1980" id="data1" /> 
                             </td> 
                             <td>
-                                <a title="Editar" onClick="editarAluno(1)"> <img  class="icon-edit" /></a> 
+                                <a title="Editar" onClick="editarAluno(this)"> <img  class="icon-edit" /></a> 
                                 
-                                <a title="Remover" onClick="removerAluno(this.parentNode.parentNode.rowIndex)">  
+                                <a title="Remover" onClick="removerAluno(this)">  
                                         <img  class="icon-remove">
                                 </a>
                             </td> 
@@ -151,8 +156,8 @@ Manter Aluno - SigEduca
                                 <input type="hidden" value="01/01/1987" id="data2" /> 
                             </td> 
                             <td>
-                                <a title="Editar" onClick="editarAluno(2)"> <img  class="icon-edit"></a> 
-                                <a title="Remover" onClick="removerAluno(this.parentNode.parentNode.rowIndex)">  <img  class="icon-remove"></a>
+                                <a title="Editar" onClick="editarAluno(this)"> <img  class="icon-edit"></a> 
+                                <a title="Remover" onClick="removerAluno(this)">  <img  class="icon-remove"></a>
 
                             </td> 
                         </tr>

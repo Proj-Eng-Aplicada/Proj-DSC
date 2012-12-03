@@ -50,3 +50,25 @@ border-collapse: separate;
 border-spacing: 2px;
 border-color: gray;
 }
+/*Estilo para pagina de aluno*/
+#cadastro{
+	display: none;
+}
+#nome_vazio{
+	
+	color: red;
+	font-size: 12px;
+	display: none;
+}
+#matricula_vazia{
+	color: red;
+	font-size: 12px;
+	display: none;
+}
+#cadastro .botao_cadastro{
+	margin-top: -10px;
+}
+
+#editar{
+	display: none;
+}
