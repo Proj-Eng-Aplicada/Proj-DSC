@@ -2,6 +2,7 @@ var codigo = 2;
 var codigoTurma = 2;
 var codigoAluno = 2;
 var codigoUsuario = 2;
+var codigoTurmaAlocar = 2;
 
 
 function crossedOut(item) {
@@ -154,15 +155,19 @@ function removerUsuario(codigoUsuario){
 }
 
 function alocarTurma(){
-	codigoAluno++;
+	codigoTurmaAlocar++;
 
 	var professor = document.alocacao_turma.professor.value;
 	var turma = document.alocacao_turma.turma.value;
-
-	var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+professor+'" /></td><td><label>'+disciplina+'</label><input type="hidden" value="'+disciplina+'" id="matricula'+disciplina+'" /></td><td><a title="Editar" onClick="editarAluno('+codigoAluno+')"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
+	var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+codigoTurmaAlocar+'" /> </td><td><label>'+turma+'</label><input type="hidden" value="'+turma+'" id="data+'codigoTurmaAlocar'+" /> </td> <td><a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  <img  class="icon-remove"></a></td> </tr>';
+	//var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+professor+'" /></td><td><label>'+disciplina+'</label><input type="hidden" value="'+disciplina+'" id="matricula'+disciplina+'" /></td><td><a title="Editar" onClick="editarAluno('+codigoAluno+')"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
 
 	document.getElementById("body_alocacao").innerHTML += dados;
 	
-	document.alocacao_turma.professor.value = "";
-	document.alocacao_turma.turma.value = "";
+	//document.alocacao_turma.professor.value = "";
+	//document.alocacao_turma.turma.value = "";
+}
+
+function removerAlocacao(codigoAlocacao){
+	document.getElementById("body_alocacao").deleteRow(codigoAlocacao);
 }

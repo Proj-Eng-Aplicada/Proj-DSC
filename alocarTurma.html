@@ -43,42 +43,25 @@ Professor - SigEduca
             </div>
         </div>
     </div>
+
        <div id="content1"class="hero-unit">
        <form class='form-horizontal' action="" name="alocacao_turma">
-         <table>
-                          <th colspan="2" style="text-align:center"><p>Alocação de Turmas</p>
-                          <p>&nbsp;</p></th>
-                        <tr>
-                            <th>
-                                <label for="id_username">Professor:</label>
-                            </th>
-                                <td>
-                                  <select name="professor"  id="id_username" >
-                               	    <option value="Rodrigo Vilar" >Rodrigo Vilar </option>
-								    <option value="Surama Maciel" >Surama Maciel</option>
-								    <option value="Ayla Rebouças" >Ayla Rebouças</option>
-                                  </select>
-                                </td>
-                      </tr>
-                            
-                            <tr>
-                                <th>
-                                  <label for="disciplina">Disciplina :</label>
-                                </th>
-                                    <td>
-                                        <select name="disciplina" >
-                                    	  <option value="POO" >POO </option>
-  										  <option value="Álgebra Linear" >Álgebra Linear</option>
- 										  <option value="Cálculo" >Cálculo</option>                                        	
-                                        </select> 
-                                    </td>
-                            </tr>                  
-                    </table>
-
-                    <p>
-                      <input class='btn btn-mini btn-primary' id="login" type="button" value="Cadastrar" onClick="alocarTurma()" />
-                    </p>
-                    <p>&nbsp;</p>
+            <p>
+            <label for="professor"> Professores</label>
+            <select name="professor"> 
+              <option value="Maria Claudia" >Maria Claudia</option>
+              <option value="André Torre" >André Torre</option>
+              <option value="Marcos Carneiro" >Marcos Carneiro</option> 
+            </select>
+            <p>
+            <label for="turmas"> Turmas</label>
+            <select name="turma"> 
+              <option value="Português" >Português</option>
+              <option value="Matemática" >Matemática</option>
+              <option value="Geografia" >Geografia</option>
+            </select>
+            <p>
+            <input class='btn btn-mini btn-primary' id="btAlocar" type="button" value="Cadastrar" onClick="alocarTurma()" />
        </form>
 
                 <form class='form-inline' action="" name="form2">    
@@ -91,11 +74,11 @@ Professor - SigEduca
                         <tr>
                             <td></td>  
                             <td>              
-                               <label>Ayla Débora</label>
+                               <label>Vinícius Abreu</label>
                                <input type="hidden" value="Ayla Débora" id="nome1" /> 
                             </td>
                             <td>
-                                <label>POO</label>
+                                <label>História Brasileira</label>
                                 <input type="hidden" value="POO" id="data1" /> 
                             </td> 
 
@@ -103,7 +86,7 @@ Professor - SigEduca
                             <td>
                                 <a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> 
                                 
-                                <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  
+                                <a title="Remover" onClick="removerAlocacao(this.parentNode.parentNode.rowIndex)">  
                                         <img  class="icon-remove">
                                 </a>
                             </td> 
@@ -112,18 +95,18 @@ Professor - SigEduca
                         <tr>
                             <td></td>  
                             <td>              
-                               <label>Surama Maciel</label>
+                               <label>Tânia Maria</label>
                                <input type="hidden" value="Surama Maciel" id="nome2" /> 
                             </td>
                             <td>
-                                <label>Álgebra Linear</label>
+                                <label>Inglês</label>
                                 <input type="hidden" value="Álgebra Linear" id="data2" /> 
                             </td>
 
                             <td>
                                 <a title="Editar" onClick="editarUsuario(1)"> <img  class="icon-edit" /></a> 
                                 
-                                <a title="Remover" onClick="removerUsuario(this.parentNode.parentNode.rowIndex)">  
+                                <a title="Remover" onClick="removerAlocacao(this.parentNode.parentNode.rowIndex)">  
                                         <img  class="icon-remove">
                                 </a>
                             </td> 
