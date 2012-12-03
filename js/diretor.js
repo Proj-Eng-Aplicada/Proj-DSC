@@ -152,3 +152,17 @@ function editarUsuario(codigoUsuario){
 function removerUsuario(codigoUsuario){
 	document.getElementById("table_prof").deleteRow(codigoUsuario);
 }
+
+function alocarTurma(){
+	codigoAluno++;
+
+	var professor = document.alocacao_turma.professor.value;
+	var turma = document.alocacao_turma.turma.value;
+
+	var dados ='<tr><td></td><td><label>'+professor+'</label><input type="hidden" value="'+professor+'" id="nome'+professor+'" /></td><td><label>'+disciplina+'</label><input type="hidden" value="'+disciplina+'" id="matricula'+disciplina+'" /></td><td><a title="Editar" onClick="editarAluno('+codigoAluno+')"> <img  class="icon-edit" /></a> <a title="Remover"><img  class="icon-remove" onClick="removerAluno(this.parentNode.parentNode.parentNode.rowIndex)"></a></td></tr>';
+
+	document.getElementById("body_alocacao").innerHTML += dados;
+	
+	document.alocacao_turma.professor.value = "";
+	document.alocacao_turma.turma.value = "";
+}
